@@ -625,7 +625,7 @@ ax3 = copyobj(handles.axes1,fig);
 set(ax3, 'units', 'normalized', 'position', [0.1 0.2 0.8 0.6]);
 
 % saveas(fig,'Force vs Extension.png')
-print(fig,'-depsc',['Force vs Extension - ' num2str(ForceNum,'%03d') '.eps'])
+print(fig,'-depsc',['Figure/Force vs Extension - ' num2str(ForceNum,'%03d') '.eps'])
 close(fig);
 
 
