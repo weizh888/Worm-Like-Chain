@@ -93,6 +93,13 @@ set(handles.y_max_fit,'string',num2str(handles.fit_max_force));
 
 handles.source_files = source_files;
 handles.file_path = 'data/';
+handles.fig_path = 'figure/';
+if ~exist(handles.file_path, 'dir')
+    mkdir(fn)
+end
+if ~exist(handles.fig_path, 'dir')
+    mkdir(handles.fig_path)
+end
 guidata(hObject, handles);
 
 
@@ -625,7 +632,7 @@ ax3 = copyobj(handles.axes1,fig);
 set(ax3, 'units', 'normalized', 'position', [0.1 0.2 0.8 0.6]);
 
 % saveas(fig,'Force vs Extension.png')
-print(fig,'-depsc',['Figure/Force vs Extension - ' num2str(ForceNum,'%03d') '.eps'])
+print(fig,'-depsc',[handle.fig_path 'Force vs Extension - ' num2str(ForceNum,'%03d') '.eps'])
 close(fig);
 
 
